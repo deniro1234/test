@@ -1,0 +1,36 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, big, em, font, img, small, strong, sub, sup, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit;  font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline;}
+:focus { outline: 0;}
+ol, ul { list-style: none;}
+table { border-collapse: separate; border-spacing: 0;}
+caption, th, td { text-align: left; font-weight: normal;}
+strong,b{font-weight:bold}
+em{font-style:italic}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+*{-moz-box-sizing: border-box; box-sizing: border-box;}
+html {width:100%;}
+body {font-family: 'RobotoLight', Calibri; font-size:14px; color: #7e7e7e; background: #fff; line-height:1.3;}
+
+.bl a {display: block;position: absolute; width: 50px; height: 50px; text-decoration: none; font-size: 30px; font-weight: bold; color:#fff; text-align: center; line-height: 50px;}
+.add_a {background: #f3a500;}
+.add_a:hover {background: #f6c052;}
+.rem_c {background: #b20000}
+.rem_c:hover {background: #ca4c49}
+table {margin: 23px; border-collapse: collapse}
+input {width: 54px; margin: 0; border: none}
+.bl {position: relative; display: inline-block;transition: 1s}
+
+.add_row-d {bottom: 3px; left: 52px;transition: 1s}
+.add_col-c {top:52px; right: 0;transition: 1s}
+.rem_col-d {top: 52px;}
+.rem_col-l {left:52px;}
+#gent {transition: 1s}
+#del_row,#del_col {opacity: 0;transition: .3s}
+
+.table_bl {border:1px solid #48aae6; margin: 52px 52px 50px 52px; display: inline-block;}
+.table_all {border-collapse: collapse; margin: 0;}
+.table_all tr td {width:50px; height: 50px; background: #48aae6;border:2px solid #fff;}
+
+#blockText {width:30px; height:30px; border:1px solid #c00;position: absolute}
+#blockText1 {width:30px; height:30px; border:1px solid #000;position: absolute}

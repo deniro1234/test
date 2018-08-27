@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <title>Document</title>
+</head>
+<body>
+
+<div class="bl">
+    <a href="javascript: addROW ()" class="add_a add_row-d">+</a>
+    <a href="javascript: remROW ()" class="rem_c rem_col-d" id="del_row">- </a>
+    <a href="javascript: addCOL ()" class="add_a add_col-c">+</a>
+    <a href="javascript: remCOL ()" class="rem_c rem_col-l" id="del_col">- </a>
+
+    <div class="table_bl">
+        <table id="gent" cellspacing="0" cellpadding="0" class="table_all">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+
+<script>
+   
+
+    function addROW ()
+    {
+        var mainTable = document.getElementById ('gent');
+        var ro = mainTable.insertRow (-1);
+        for (var i = 0, count = mainTable.rows [0].cells.length; i < count; i++)
+        {
+            var ce = ro.insertCell (-1);
+        }
+    }
+
+    function remROW ()
+    {
+        var mainTable = document.getElementById ('gent');
+        var unhoverBl = document.getElementById ('del_row');
+        if (mainTable.rows.length < 2)
+        {
+            unhoverBl.style.display = "none";
+            return
+        }
+        mainTable.deleteRow (mainTable.rows.length - 1);
+
+    }
+
+    function addCOL ()
+    {
+        var mainTable = document.getElementById ('gent');
+        for (var i = 0, count = mainTable.rows.length; i < count; i++)
+        {
+            var addC = document.createElement ('td');
+            var ce = mainTable.rows [i];
+            ce.appendChild (addC);
+        }
+    }
+
+    function remCOL ()
+    {
+        var mainTable = document.getElementById ('gent');
+        var unhoverCol = document.getElementById ('del_col');
+        if (mainTable.rows [0].cells.length < 2)
+        {
+            unhoverCol.style.display = "none";
+            return;
+
+        }
+        for (var i = 0, count = mainTable.rows.length; i < count; i++)
+        {
+            var ceL = mainTable.rows [i].cells.length;
+            if (ceL > 1) mainTable.rows [i].deleteCell (ceL - 1);
+
+        }
+    }
+
+    var tds = document.getElementsByTagName('td');
+    var delRow = document.getElementById("del_row");
+    var delCol = document.getElementById("del_col");
+
+    var table = document.getElementById('gent');
+
+    table.onmouseover = function (e) {
+        var target = e.target;
+
+        var cell = target.cellIndex + 1;
+        var row = target.parentNode.rowIndex + 1;
+
+        delCol.style.left = 51 * cell + 'px';
+        delRow.style.top = 51 * row + 'px';
+
+        delRow.style.opacity = "1";
+        delCol.style.opacity = "1";
+    };
+
+    table.onmouseout = function (e) {
+        var target = e.target;
+
+        if (target.id !== 'del_col' && target.id !== 'del_row') {
+            delRow.style.opacity = "0";
+            delCol.style.opacity = "0";
+        }
+    };
+
+    delCol.onmouseover = function (e) {
+        delRow.style.opacity = "1";
+        delCol.style.opacity = "1";
+    };
+
+    delRow.onmouseover = function (e) {
+        delRow.style.opacity = "1";
+        delCol.style.opacity = "1";
+    };
+
+    
+
+</script>
+
+
+</body>
+</html>
